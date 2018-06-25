@@ -36,6 +36,10 @@ all: tinyalsa/src/libtinyalsa.a $(OBJECTS)
 tinyalsa/src/libtinyalsa.a:
 	make -C tinyalsa/src CROSS_COMPILE=$(CROSS_COMPILE)
 
+rda_combo:
+	$(CC) rda_combo.c $(CFLAGS) $(LDFLAGS) -lc -o rda_combo
+
+
 .PHONY: clean
 clean:
 	make -C tinyalsa/src clean
